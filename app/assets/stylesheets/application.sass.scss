@@ -1,1 +1,23 @@
 // Entry point for your Sass build
+.sort {
+    position: absolute;
+    top: 0.5rem;
+    left: -1rem;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+.sort-desc {
+    border-top: 8px solid #db1010;
+}
+
+.sort-asc {
+    border-bottom: 8px solid #db1010;
+}
+
+.table-header {
+    position: relative;
+    text-align: left;
+}

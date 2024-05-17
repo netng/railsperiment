@@ -1,0 +1,37 @@
+<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th class="table-header">
+        <%= show_sort_indicator_for("name") %>
+        <%= sort_link(column: "name", label: "Name") %>
+      </th>
+      <th class="table-header">
+        <%= show_sort_indicator_for("teams.name") %>
+        <%= sort_link(column: "teams.name", label: "Team") %>
+      </th>
+      <th class="table-header">
+        <%= show_sort_indicator_for("seasons") %>
+        <%= sort_link(column: "seasons", label: "Seasons") %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td><%= player.name %></td>
+        <td><%= player.team.name %></td>
+        <td><%= player.seasons %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New player", new_player_path %>
